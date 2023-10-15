@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PROFILE</title>
+        <meta charset="UTF-8">
+        <meta name="viewport"content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />"
+       <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            background: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        /* Style Body */
+        .container{
+            position: relative;
+            width: 810px;
+            height: 1150px;
+            background: white; 
+            margin:50px; 
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
+        }
+        /* Style container */
+        .container .left-side{
+            position: relative;
+            background-image:linear-gradient(RGB(26, 183, 255), RGB(87, 79, 203));
+            padding: 30px;
+            width: 300px;
+        }
+        /* Style conatner phia trai */
+        .profileText{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            /* border-bottom: 1px solid rgb(255, 255, 255); */
+        }
+        
+        .profileText .imgBx{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+        .profileText .imgBx img{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Phan hinh anh profile */
+        .contactInfo{
+            padding-top:20px;
+            /* border-bottom: 1px solid rgb(255, 255, 255); */
+            height: 250;
+        }
+        .title{
+            color:white ;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .contactInfo ul{
+            position: relative;
+            
+        }
+        .contactInfo ul li{
+            list-style: none;
+            position: relative;
+            margin: 10px 0;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        .contactInfo ul li .icon{
+            display: inline-block;
+            width: 30px;
+            font-size: 18px;
+            color: white;
+        }
+        .contactInfo ul li span{
+            color: white;
+            font-weight: 300;
+        }
+        /* ket thuc contact */
+        .Skill{
+            padding-top: 20px;
+            /* border-bottom: 1px solid rgb(255, 255, 255); */
+        }
+        .Skill img{
+           width: 35px;
+           height: 35px;
+           
+        }
+        .Skill .group-item {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+        }
+        .Skill .group-item ul{
+            text-align: center;
+        }
+        .Skill .group-item li{
+            display: inline-block;
+            margin: 15px;
+        }
+        /* ket thuc skill */
+        .Language{
+            padding-top: 20px;
+            /* border-bottom: 1px solid rgb(255, 255, 255); */
+            height: 260px;
+        }
+        .Language .text{
+            text-align: center;
+            font-weight: 100px;
+            font-size: 12px;
+            color: white;
+        }
+        .Language ul li{
+            color:rgb(24, 106, 230) ;
+        }
+        .Language .percent{
+            position: relative;
+            width: 100%;
+            height: 18px;
+            background: white;
+            display: block;
+            margin-top: 5px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        .Language .percent div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: rgb(41, 174, 226);
+        }
+        /* ket thuc language */
+        .Passions{
+            padding-top: 20px;           
+        }
+       
+        .Passions .iconpassion img {          
+            width: 30px;
+            height:30px;
+            justify-content:space-around;
+            margin: 10px;       
+        }
+        /* ket thuc passion */
+        .container .right-side{
+            position: relative;
+            background: white
+            padding: 40px;
+        }
+        /* style container phia ben phai */
+        .box{
+            text-align: center;
+            background-color: rgb(34, 112, 202);
+            margin-top: 35px;
+            height: 100px;
+        }
+        .box .Name{
+            font-weight: 300;
+            color: white;
+            padding-top: 15px;
+            font-size: 50px;
+        }
+        .box .role{
+            color: white;
+            
+        }
+        /* Ket thuc phan box */
+        .profile{
+            padding-top: 20px;
+            height: 250px;
+        }
+        .profile ul{
+            position: relative;
+            height: 1000px;
+            padding-left:20px;
+           
+        }
+        .profile ul li {
+            list-style: none;
+            position: relative;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .profile ul li .icon{
+            display: inline-block;
+            width: 25px;
+            font-size: 30px;
+            color: rgb(19, 112, 233);
+            margin-left: 20px;
+            margin-right: 15px;
+        }
+        .profile ul li .h5{
+            color: rgb(19, 112, 233);
+            font-weight: 300px;
+            font-size: 25px;
+        }
+        .profile ul li .text p{
+            margin-left: 30px;
+            width: 420px;
+            align-items: center;
+            font-size: 15px;
+        }
+        .profile ul li .education .group-item .item .item-top{
+            display: flex;
+            gap: 1rem;          
+        }
+        .profile ul li .education .group-item .item .item-top .item-year{
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+        .profile ul li .education .group-item .item .item-top .item-title{
+            margin: 0.5rem 0 0.5rem 0;
+        }
+        .profile ul li .education .group-item .item .item-top .item-title .item-title-top{
+            color: #001652;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .profile ul li .education .group-item .item .item-top .item-title .item-title-bottom{
+            color: #001652;
+            font-size: 15px;
+            font-weight: 400;
+        }
+        .profile ul li .education .group-item .item .item-bottom{
+            margin-left: 0.8rem;
+            border-left: #001652 solid 0.20rem;
+            color: #001652;
+            font-weight: 100;
+            padding-left: 25px;
+            font-size: 13px;
+        }
+        .profile ul li .experience .group-item .item .item-top{
+            display: flex;
+            gap: 1rem;
+        }
+        .profile ul li .experience .group-item .item .item-top .item-year{
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+        .profile ul li .experience .group-item .item .item-top .item-title{
+            margin: 0.5rem 0 0.5rem 0;
+        }
+        .profile ul li .experience .group-item .item .item-top .item-title .item-title-top{
+            color: #001652;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .profile ul li .experience .group-item .item .item-top .item-title .item-title-bottom{
+            color: #001652;
+            font-size: 15px;
+            font-weight: 400;
+        }
+        .profile ul li .experience .group-item .item .item-bottom{
+            margin-left: 0.8rem;
+            border-left: #001652 solid 0.20rem;
+            color: #001652;
+            font-weight: 100;
+            padding-left: 25px;
+            font-size: 13px;
+        }
+        .profile ul li .h5 .dot{
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgb(31, 135, 233);
+            display: inline-block;
+            
+        }
+        .contactInfo .title .dot-left-side{
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: white;
+            display: inline-block;
+        }
+        .Skill .title .dot-left-side{
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: white;
+            display: inline-block;
+        }
+        .Language .title .dot-left-side{
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: white;
+            display: inline-block;
+        }
+        .Passions .title .dot-left-side{
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: white;
+            display: inline-block;
+        }
+       </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left-side">
+                <div class="profileText">
+                    <div class="imgBx">
+                        <img src="img1/avatar.png" alt ="">
+                    </div>
+                </div>
+                <div class="contactInfo">
+                    <h1 class="title">
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        CONTACT ME
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                    </h1>
+                    <ul>
+                        <li>
+                            <span class="icon"><i class="fa fa-phone-square" aria-hidden="true"></i></span>
+                            <span class= "h2"> PHONE <br> 0 123 4560 22411
+                            </span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                            <span class= "h2"> MAIL
+                                <div class="p">mark2@gmail.com</div>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                            <span class= "h2"> LINKEDIN
+                                <div class="p">mark.com</div>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                            <span class= "h2"> ADDRESS
+                                <div class="p">New Yor, New Yor City</div>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="Skill">
+                    <h1 class="title"><div>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        SKILL
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                      </div>
+                    </h1>
+                    <div class="group-item">
+                        <ul>
+                            <li><img src="img1/skill-icon-1.png" alt=""></li>
+                            <li><img src="img1/skill-icon-2.png" alt=""></li>
+                            <li><img src="img1/skill-icon-3.png" alt=""></li>
+                            <li><img src="img1/skill-icon-4.png" alt=""></li>
+                            <li><img src="img1/skill-icon-5.png" alt=""></li>
+                            <li><img src="img1/skill-icon-6.png" alt=""></li>
+                        </ul>
+                    </div>
+
+                    
+                </div>
+                <div class="Language">
+                    <h1 class="title">
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        LANGUAGE
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                    </h1>
+                    <ul>
+                        <li>
+                            <h3 class="text">MARKETING</h3>
+                            <span class="percent">
+                                <div style="width: 80%;"></div>
+                            </span>
+                        </li>
+                        <li>
+                            <h3 class="text">PUBLIC SPEAKING</h3>
+                            <span class="percent">
+                                <div style="width: 80%;"></div>
+                            </span>
+                        </li>
+                        <li>
+                            <h3 class="text">DRAWING</h3>
+                            <span class="percent">
+                                <div style="width: 80%;"></div>
+                            </span>
+                        </li>
+                        <li>
+                            <h3 class="text">COPYWRITER</h3>
+                            <span class="percent">
+                                <div style="width: 80%;"></div>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="Passions">
+                    <h1 class="title">
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        PASSIONS
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                        <span class="dot-left-side"></span>
+                    </h1>
+                        <div class="iconpassion">
+                            <span class="iconpassion"><img src="img/airplane-mode.png" alt=""></span>
+                        
+                            <span class="iconpassion"><img src="img/running.png" alt=""></span>
+                       
+                            <span class="iconpassion"><img src="img/microscope.png" alt=""></span>
+                        
+                            <span class="iconpassion"><img src="img/edit.png" alt=""></span>
+                        </div>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="box">
+                    <h4 class="Name">RUBY THUY</h4>
+                    <p class="role">DESIGNER & DEVELOPER</p>
+                </div>
+                <div class="profile">
+                    <ul>
+                        <li>
+                            <span class="icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <span class="h5">PROFILE
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </span>
+                            <span class="text">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adpiscing elit, sed diam
+                                    <br> nonimmy bibh euismod tincidunt ut laoreet dolore magna aliquam
+                                    <br> erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
+                                    <br> tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo 
+                                    <br>consequat. Duis autem vel eum iriure dolor in hendrerit in vuputate
+                                    <br> velit esse molestie consequat, vel illum dolore eu feufiat nulla
+                                    <br> facilisis at vero eros et accumsan et iusto.</p>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
+                            <span class="h5">EDUCATION
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </span>
+                            <span class="education">
+                                <div class="group-item">
+                                    <div class="item">
+                                        <div class="item-top">
+                                            <div class="item-year">2018 <br> 2019</div>
+                                            <div class="item-title">
+                                                <div class="item-title-top">Enter Your Masters Degree</div>
+                                                <div class="item-title-bottom">Institute/ Organization/ College</div>
+                                            </div>
+                                        </div>
+                                        <div class="item-bottom">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                                            <br>industry. Lorem Ipsum has been the industry's standard dummy.
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="education">
+                                <div class="group-item">
+                                    <div class="item">
+                                        <div class="item-top">
+                                            <div class="item-year">2019 <br> 2020</div>
+                                            <div class="item-title">
+                                                <div class="item-title-top">Enter Your Masters Degree</div>
+                                                <div class="item-title-bottom">Institute/ Organization/ College</div>
+                                            </div>
+                                        </div>
+                                        <div class="item-bottom">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                                            <br>industry. Lorem Ipsum has been the industry's standard dummy.
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="education">
+                                <div class="group-item">
+                                    <div class="item">
+                                        <div class="item-top">
+                                            <div class="item-year">2020 <br> 2021</div>
+                                            <div class="item-title">
+                                                <div class="item-title-top">Enter Your Masters Degree</div>
+                                                <div class="item-title-bottom">Institute/ Organization/ College</div>
+                                            </div>
+                                        </div>
+                                        <div class="item-bottom">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                                            <br>industry. Lorem Ipsum has been the industry's standard dummy.
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+                            
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                            <span class="h5">EXPERINECE
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </span>
+                            <span class="experience">
+                                <div class="group-item">
+                                    <div class="item">
+                                        <div class="item-top">
+                                            <div class="item-year">2018 <br> 2019</div>
+                                            <div class="item-title">
+                                                <div class="item-title-top">Enter Your Job Position</div>
+                                                <div class="item-title-bottom">Company name</div>
+                                            </div>
+                                        </div>
+                                        <div class="item-bottom">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                                            <br>industry. Lorem Ipsum has been the industry's standard dummy
+                                            <br> text ever since the 1500s, when an unknown printer took a galley.
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="experience">
+                                <div class="group-item">
+                                    <div class="item">
+                                        <div class="item-top">
+                                            <div class="item-year">2019 <br> 2020</div>
+                                            <div class="item-title">
+                                                <div class="item-title-top">Enter Your Job Position</div>
+                                                <div class="item-title-bottom">Company name</div>
+                                            </div>
+                                        </div>
+                                        <div class="item-bottom">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                                            <br>industry. Lorem Ipsum has been the industry's standard dummy
+                                            <br> text ever since the 1500s, when an unknown printer took a galley.
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="experience">
+                                <div class="group-item">
+                                    <div class="item">
+                                        <div class="item-top">
+                                            <div class="item-year">2020 <br> 2021</div>
+                                            <div class="item-title">
+                                                <div class="item-title-top">Enter Your Job Position</div>
+                                                <div class="item-title-bottom">Company name</div>
+                                            </div>
+                                        </div>
+                                        <div class="item-bottom">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                                            <br>industry. Lorem Ipsum has been the industry's standard dummy
+                                            <br> text ever since the 1500s, when an unknown printer took a galley.
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+                        </li>
+                    </ul>
+                   </div>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>
